@@ -139,6 +139,9 @@ print(df)
 # P3   93   85   74    8
 # P4  100   91   95    9
 
+df['A+B'] = df['타입A'] + df['타입B']
+print(df)
+
 
 df['A*B'] = df['타입A'] * df['타입B']
 print(df)
@@ -153,14 +156,14 @@ print(df)
 #    , encoding='euc-kr')
 
 # 엑셀 파일 만들기
-df.to_csv('D:\\excelPython\\data.csv',mode='w', encoding='euc-kr')
+df.to_csv('D:\\excelPython\\data2.csv',mode='w', encoding='euc-kr')
 print(df)
 
-# 타입A  타입B  타입C  A-B   A*B
-# P1   90   83   86    7  7470
-# P2   89   74   97   15  6586
-# P3   93   85   74    8  7905
-# P4  100   91   95    9  9100
+#     타입A  타입B  타입C  A-B  A+B   A*B
+# P1   90   83   86    7  173  7470
+# P2   89   74   97   15  163  6586
+# P3   93   85   74    8  178  7905
+# P4  100   91   95    9  191  9100
 
 df.sort_values(['A-B','A*B'],ascending=False,inplace=False)
 print(df)
@@ -174,4 +177,4 @@ print(df)
 df['합']= df.sum(axis=1)
 print(df)
 
-df.to_csv('D:\\excelPython\\data1.csv',mode='w', encoding='euc-kr')
+df.to_csv('D:\\excelPython\\data3.csv',mode='w', encoding='euc-kr')
